@@ -11,3 +11,58 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+h1{
+  text-align:center;
+  color:#3D087B;
+}
+.searchbar{
+  display:flex;
+ justify-content:center;
+ align-items:center;
+ margin-bottom:50px;
+}
+.searchbar input{
+  width:300px;
+  height:30px;
+  outline:none;
+  border:2px solid blueviolet;
+  border-radius:7px;
+  font-weight:600;
+  padding-left:12px;
+}
+.gotchars{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.charcard{
+  width:250px;
+  height:370px;
+  border:2px solid #610094;
+  border-radius:10px;
+  margin:7px;
+  text-align:center;
+  background-color:#60009462;
+}
+.charcard img{
+  margin-top:5px;
+}
+.charcard h4{
+  color:black;
+}
+.charcard p{
+  color:#3D087B;
+  font-weight:bolder;
+}
+.quote{
+  text-align:center;
+  margin:10px;
+}
+footer h3{
+  text-align:center;
+  margin-top:50px;
+}
+footer a{
+  text-decoration:none;
+}
