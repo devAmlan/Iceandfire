@@ -5,12 +5,13 @@ const Got = () => {
     const [characters, setCharacters] = useState([])
     const [search, setSearch] = useState("")
     const [filtercharacters, setFiltercharacters] = useState([])
-
+    const [isPending,setPending] = useState(true)
     useEffect(()=>{
     axios.get('https://thronesapi.com/api/v2/Characters/')
     .then((resp)=>{
     const gotchar = resp.data;
     setCharacters(gotchar)
+    setPending(false)
     }).catch(err=>{console.log(err)})
     },[])
 
@@ -23,6 +24,10 @@ const Got = () => {
 
     return (
   <>
+  <div className="quote">
+   <p>Never forget what you are. The rest of the world will not. Wear it like armor, and it can never be used to hurt you</p>
+   <h4>-Tyrion Lannister</h4>
+   </div>
   <div className="searchbar">
   <input type="text"
          value={search}
@@ -30,6 +35,7 @@ const Got = () => {
          placeholder="Search Characters"
         />
   </div>
+  {isPending && <div className="loading"><h3>Loading...</h3></div>}
   <div className="gotchars">
   {
     filtercharacters.map((chardetails)=>{
@@ -39,10 +45,7 @@ const Got = () => {
     })
   }
   </div>
-   <div className="quote">
-   <p>Never forget what you are. The rest of the world will not. Wear it like armor, and it can never be used to hurt you</p>
-   <h4>-Tyrion Lannister</h4>
-   </div>
+
    <footer>
      <h3>Developed by <a href="https://twitter.com/AmlanjyotiSaho5" target="_blank" rel="noreferrer">Amlan</a></h3>
    </footer>
